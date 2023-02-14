@@ -24,7 +24,7 @@ class TafidzRequest extends FormRequest
      */
     public function rules()
     {
-        $rule_tahfidz_unique = Rule::unique('tahfidzs', 'tahfidz');
+        $rule_tahfidz_unique = Rule::unique('tahfidzs', 'nama');
         if($this->method() !== 'POST') {
             $rule_tahfidz_unique->ignore($this->route()->parameter('id'));
         }
@@ -41,7 +41,7 @@ class TafidzRequest extends FormRequest
         return [
             'nama.required'=>'Silahkan mengisi namanya',
             'surat.required'=>'Silhakan mengisi suratnya',
-            'status.required'=>'Silqhakan mengisi ayatnya'
+            'status.required'=>'Silahakan mengisi ayatnya'
         ];
     }
 }

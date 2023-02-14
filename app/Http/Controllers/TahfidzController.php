@@ -35,7 +35,7 @@ public function create() {
     return view('create');
 }
 
-public function store(Request $request) {
+public function store(TafidzRequest $request) {
     Tahfidz::create([
         'nama'=> $request->nama,
         'surat'=>$request->surat,
@@ -54,7 +54,7 @@ public function edit($id) {
     return view('edit', compact('tahfidz'));
 }
 
-public function update(Request $request, $id) {
+public function update(TafidzRequest $request, $id) {
     Tahfidz::find($id)->update([
         'nama'=> $request->nama,
         'surat'=> $request->surat,
