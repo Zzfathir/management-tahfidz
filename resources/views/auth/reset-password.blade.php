@@ -14,20 +14,12 @@
 @endif
 
 <div class="login-box">
-    <p>Register</p>
-    <form action="{{ route('register') }}" method="POST">
+    <p>Reset your password</p>
+    <form action="{{ route('password.update') }}" method="POST">
         @csrf
+        <input type="hidden" name="token" value="{{ $request->route('token') }}">
       <div class="user-box">
-        <input required="" name="name" type="text" value="{{ old('name') }}">
-        @error('name')
-        <span class="text-danger">
-            {{ $message }}
-        </span>
-        @enderror
-        <label>Username</label>
-      </div>
-      <div class="user-box">
-        <input required="" name="email" type="text" value="{{ old('email') }}">
+        <input required="" name="email" type="text" value="{{ old('email', $request->email) }}">
         @error('email')
         <span class="text-danger">
             {{ $message }}
@@ -42,7 +34,7 @@
             {{ $message }}
         </span>
         @enderror
-        <label>Password</label>
+        <label>New Password</label>
       </div>
       <div class="user-box">
         <input required="" name="password_confirmation" type="password">
@@ -53,7 +45,7 @@
         <span></span>
         <span></span>
         <span></span>
-        Register
+        Reset
       </button>
     </form>
   </div>

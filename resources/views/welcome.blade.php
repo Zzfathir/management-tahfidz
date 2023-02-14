@@ -1,6 +1,10 @@
 @extends('app')
 @section('main')
+@guest
 <p class="mb-3 text-white font-semibold ml-3 mt-3">Welcome, guest</p>
+@else
+<p class="mb-3 text-white font-semibold ml-3 mt-3">Welcome, {{ Auth::user()->name }}</p>
+@endguest
 <div class="p-5 text-center bg-dark">
     <h1 class="mb-3 text-white fs-1 blockquote fw-bold">Welcome to Tahfidz Management</h1>
     <h4 class="mb-3 text-white mt-3">Don't forget to managing your tahfidz to make your memorization easier and more structured ^^</h4>

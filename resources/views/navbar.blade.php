@@ -79,9 +79,11 @@
                     <div class="bg">
                     <div class="bg-inner"></div>
                     </div>
-                    <a type="button" href="{{ route('logout') }}" class="text">Sign Up</a>
+                    <a type="button" href="{{ route('logout') }}" class="text" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a>
+                    <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                      @csrf
+                    </form>
                   </button>
-                  <form action="{{ route('logout') }}"></form>
                   @endguest
       
                 <!--

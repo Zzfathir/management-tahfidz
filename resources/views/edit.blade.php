@@ -12,36 +12,44 @@
 @endif
 
 <div class="login-box">
-    <p>Login</p>
-    <form action="{{ route('login') }}" method="POST">
+    <p>Ubah Hafalan Tahfidz</p>
+    <form action="{{ url("/tahfidz/$tahfidz->id") }}" method="POST">
         @csrf
+        @method('PATCH')
       <div class="user-box">
-        <input required="" name="email" type="email" value="{{ old('email') }}">
-        @error('email')
+        <input required="" name="nama" type="text" value="{{ $tahfidz->nama }}">
+        @error('nama')
            <span class="text-danger">
               {{ $message }}
             </span>
          @enderror
-        <label>Email</label>
+        <label>Nama</label>
       </div>
       <div class="user-box">
-        <input required="" name="password" type="password">
-        @error('password')
+        <input required="" name="surat" type="text" value="{{ $tahfidz->surat }}">
+        @error('surat')
            <span class="text-danger">
               {{ $message }}
             </span>
          @enderror
-        <label>Password</label>
+        <label>Surat</label>
+      </div>
+      <div class="user-box">
+        <input required="" name="status" type="text" value="{{ $tahfidz->status }}">
+        @error('status')
+           <span class="text-danger">
+              {{ $message }}
+            </span>
+         @enderror
+        <label>Ayat</label>
       </div>
       <button type="submit">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        Login
+        Edit
       </button>
     </form>
-    <a href="{{ route('password.request') }}" class="btn btn-link">Forgot Password?</a>
-    <p>Don't have an account? <a href="{{ route('register') }}" type="button" class="a2">Sign up!</a></p>
   </div>
 @endsection

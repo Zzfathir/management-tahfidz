@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TafidzRequest;
 use App\Models\Tahfidz;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ public function create() {
     return view('create');
 }
 
-public function store(Request $request) {
+public function store(TafidzRequest $request) {
     Tahfidz::create([
         'nama'=> $request->nama,
         'surat'=>$request->surat,
@@ -45,6 +46,20 @@ public function store(Request $request) {
 
 public function delete($id) {
     Tahfidz::find($id)->delete();
+    return redirect('/tahfidz');
+}
+
+public function edit($id) {
+    $tahfidz = Tahfidz::find($id);
+    return view('edit', compact('tahfidz'));
+}
+
+public function update(Request $request, $id) {
+    Tahfidz::find($id)->update([
+        'nama'=> $request->nama,
+        'surat'=> $request->surat,
+        'status'=> $request->status
+    ]);
     return redirect('/tahfidz');
 }
 

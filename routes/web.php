@@ -23,4 +23,6 @@ Route::get('/tahfidz', [TahfidzController::class, 'index'])->middleware('auth');
 Route::get('/tahfidz/create', [TahfidzController::class, 'create']);
 Route::post('/tahfidz', [TahfidzController::class, 'store']);
 Route::delete('/tahfidz/{id}', [TahfidzController::class, 'delete']);
+Route::get('/tahfidz/{id}/edit', [TahfidzController::class, 'edit']);
+Route::patch('/tahfidz/{id}', [TahfidzController::class, 'update']);
 

@@ -14,7 +14,7 @@ class TafidzRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -39,8 +39,9 @@ class TafidzRequest extends FormRequest
     public function messages() {
 
         return [
-            'task.required'=>'taksnya isii woeeeeee',
-            'user.required'=>'namanya harus diisii'
+            'nama.required'=>'Silahkan mengisi namanya',
+            'surat.required'=>'Silhakan mengisi suratnya',
+            'status.required'=>'Silqhakan mengisi ayatnya'
         ];
     }
 }
