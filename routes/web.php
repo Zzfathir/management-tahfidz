@@ -19,10 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [TahfidzController::class, 'login'])->name('login');
-Route::get('/register', [TahfidzController::class, 'register'])->name('register');
-
-Route::get('/tahfidz', [TahfidzController::class, 'index']);
+Route::get('/tahfidz', [TahfidzController::class, 'index'])->middleware('auth');
 Route::get('/tahfidz/create', [TahfidzController::class, 'create']);
 Route::post('/tahfidz', [TahfidzController::class, 'store']);
 Route::delete('/tahfidz/{id}', [TahfidzController::class, 'delete']);

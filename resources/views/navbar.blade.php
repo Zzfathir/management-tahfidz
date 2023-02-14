@@ -38,6 +38,7 @@
               </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                @guest
                 <button type="button" class="btn cube cube-hover">
                     <div class="bg-top">
                     <div class="bg-inner"></div>
@@ -66,6 +67,22 @@
                     </div>
                     <a type="button" href="{{ route('register') }}" class="text">Sign Up</a>
                   </button>
+
+                  @else
+                  <button type="button" class="btn cube cube-hover">
+                    <div class="bg-top">
+                    <div class="bg-inner"></div>
+                    </div>
+                    <div class="bg-right">
+                    <div class="bg-inner"></div>
+                    </div>
+                    <div class="bg">
+                    <div class="bg-inner"></div>
+                    </div>
+                    <a type="button" href="{{ route('logout') }}" class="text">Sign Up</a>
+                  </button>
+                  <form action="{{ route('logout') }}"></form>
+                  @endguest
       
                 <!--
                   Dropdown menu, show/hide based on menu state.

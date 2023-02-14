@@ -8,12 +8,8 @@ use Illuminate\Http\Request;
 class TahfidzController extends Controller
 {
 
-    public function login() {
-        return view('login');
-    }
-
-    public function register() {
-        return view('register');
+    public function __construct() {
+        $this-> middleware('auth');
     }
 
     public function index(Request $request) {
