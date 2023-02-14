@@ -35,7 +35,7 @@ public function create() {
     return view('create');
 }
 
-public function store(TafidzRequest $request) {
+public function store(Request $request) {
     Tahfidz::create([
         'nama'=> $request->nama,
         'surat'=>$request->surat,
