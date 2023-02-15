@@ -8,7 +8,7 @@
 <div class="flip-card">
     <div class="flip-card-inner">
         <div class="flip-card-front">
-            <p class="title">{{ $item->nama }}</p>
+            <p class="title">{{ $item->name }}</p>
             <p>Tahfidz</p>
         </div>
         <div class="flip-card-back">

@@ -10,7 +10,7 @@ class Tahfidz extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
+        'name',
         'surat',
         'status'
     ];

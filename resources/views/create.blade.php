@@ -16,8 +16,8 @@
     <form action="{{ url('/tahfidz') }}" method="POST">
         @csrf
       <div class="user-box">
-        <input required="" name="nama" type="text" value="{{ old('nama') }}">
-        @error('nama')
+        <input required="" name="name" type="text" value="{{ old('name') }}">
+        @error('name')
            <span class="text-danger">
               {{ $message }}
             </span>

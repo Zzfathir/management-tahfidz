@@ -16,7 +16,7 @@ class TahfidzController extends Controller
 
     public function index(Request $request) {
         if($request->search) {
-            $tahfidz = Tahfidz::where('nama', 'LIKE', "%$request->search")->get();
+            $tahfidz = Tahfidz::where('name', 'LIKE', "%$request->search")->get();
             return $tahfidz;
     }
 
@@ -38,7 +38,7 @@ public function create() {
 
 public function store(TafidzRequest $request) {
     Tahfidz::create([
-        'nama'=> $request->nama,
+        'name'=> $request->name,
         'surat'=>$request->surat,
         'status'=>$request->status
     ]);
@@ -57,7 +57,7 @@ public function edit($id) {
 
 public function update(TafidzRequest $request, $id) {
     Tahfidz::find($id)->update([
-        'nama'=> $request->nama,
+        'name'=> $request->name,
         'surat'=> $request->surat,
         'status'=> $request->status
     ]);

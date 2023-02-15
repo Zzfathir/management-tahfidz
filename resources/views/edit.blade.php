@@ -17,8 +17,8 @@
         @csrf
         @method('PATCH')
       <div class="user-box">
-        <input required="" name="nama" type="text" value="{{ $tahfidz->nama }}">
-        @error('nama')
+        <input required="" name="name" type="text" value="{{ $tahfidz->name }}">
+        @error('name')
            <span class="text-danger">
               {{ $message }}
             </span>
