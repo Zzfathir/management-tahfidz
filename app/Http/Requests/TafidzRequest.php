@@ -24,13 +24,13 @@ class TafidzRequest extends FormRequest
      */
     public function rules()
     {
-        $rule_tahfidz_unique = Rule::unique('tahfidzs', 'nama');
+        $rule_tahfidz_unique = Rule::unique('tahfidzs', 'name');
         if($this->method() !== 'POST') {
             $rule_tahfidz_unique->ignore($this->route()->parameter('id'));
         }
 
         return [
-            'nama'=>['required', $rule_tahfidz_unique],
+            'name'=>['required', $rule_tahfidz_unique],
             'surat'=>['required'],
             'status'=>['required']
         ];

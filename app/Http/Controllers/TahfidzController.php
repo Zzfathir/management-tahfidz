@@ -14,6 +14,22 @@ class TahfidzController extends Controller
         $this-> middleware('verified');
     }
 
+    public function admin(Request $request) {
+        if($request->search) {
+            $tahfidz = Tahfidz::where('name', 'LIKE', "%$request->search")->get();
+            return $tahfidz;
+    }
+
+    $tahfidz = Tahfidz::paginate(5);
+    return view('admin', [
+        'data'=> $tahfidz
+    ]);
+    }
+
+    public function dashboard() {
+        return view('dashboard');
+    }
+
     public function index(Request $request) {
         if($request->search) {
             $tahfidz = Tahfidz::where('name', 'LIKE', "%$request->search")->get();
@@ -42,12 +58,12 @@ public function store(TafidzRequest $request) {
         'surat'=>$request->surat,
         'status'=>$request->status
     ]);
-    return redirect('/tahfidz');
+    return redirect('/admin');
 }
 
 public function delete($id) {
     Tahfidz::find($id)->delete();
-    return redirect('/tahfidz');
+    return redirect('/admin');
 }
 
 public function edit($id) {
@@ -61,7 +77,7 @@ public function update(TafidzRequest $request, $id) {
         'surat'=> $request->surat,
         'status'=> $request->status
     ]);
-    return redirect('/tahfidz');
+    return redirect('/admin');
 }
 
 }

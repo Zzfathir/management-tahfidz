@@ -19,7 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/dashboard', [TahfidzController::class, 'dashboard'])->middleware('auth');
+Route::get('/admin', [TahfidzController::class, 'admin']);
+
 Route::get('/tahfidz', [TahfidzController::class, 'index'])->middleware('auth');
+
+
 Route::get('/tahfidz/create', [TahfidzController::class, 'create'])->middleware('is_admin');
 Route::post('/tahfidz', [TahfidzController::class, 'store'])->middleware('is_admin');
 Route::delete('/tahfidz/{id}', [TahfidzController::class, 'delete'])->middleware('is_admin');

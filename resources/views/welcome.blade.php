@@ -10,7 +10,7 @@
     <h4 class="mb-3 text-white mt-3">Don't forget to managing your tahfidz to make your memorization easier and more structured ^^</h4>
   </div>
   <div class="flex justify-content-center mt-20">
-  <a href="{{ url('/tahfidz') }}" class="continue-application">
+  <a href="{{ url('/dashboard') }}" class="continue-application">
     <div>
         <div class="pencil"></div>
         <div class="folder">
