@@ -693,6 +693,66 @@
     color: #f4be1e;
 }
 
+.buttonee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+  color: white;
+  text-shadow: 2px 2px rgb(116, 116, 116);
+  text-transform: uppercase;
+  border: solid 2px black;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: #e8a01c;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.buttonee:active {
+  transform: scale(.9);
+  transition: all 100ms ease;
+}
+
+.buttonee svg {
+  transition: all .5s ease;
+  z-index: 2;
+}
+
+.play {
+  transition: all .5s ease;
+  transition-delay: 300ms;
+}
+.buttonee:hover {
+  color: white
+}
+
+.buttonee:hover svg {
+  transform: scale(3) translate(50%);
+}
+
+.now {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all .5s ease;
+  z-index: 2;
+}
+
+.buttonee:hover .now {
+  transform: translateX(10px);
+  transition-delay: 300ms;
+}
+
+.buttonee:hover .play {
+  transform: translateX(200%);
+  transition-delay: 300ms;
+}
+
     </style>
 </head>
 
