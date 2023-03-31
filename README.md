@@ -8,3 +8,4 @@ Tahfidz management website untuk memanage tahfidz yang berguna untuk seorang pen
 - Admin view
 - User View
 - Verify email
+- Dashboard
