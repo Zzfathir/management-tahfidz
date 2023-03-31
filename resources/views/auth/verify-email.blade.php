@@ -1,4 +1,4 @@
-@extends('app')
+{{-- @extends('app')
 @section('main')
 
 <div class="mt-5 mx-auto" style="width: 380px">
@@ -22,4 +22,4 @@ Before proceeding, please check your email for verification.
       </button>
     </form>
   </div>
-@endsection
+@endsection --}}
